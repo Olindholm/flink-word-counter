@@ -25,7 +25,7 @@ if [ $pidsCount -gt 0 ]; then
 	echo "Kafka already running on pid(s) [${pids//$'\n'/, }]"
 else
 	# Create logdir if non-existant
-	(mkdir -p "$(dirname '$logfile')" && touch "$logfile") > /dev/null 2>&1
+	(mkdir -p "$(dirname "$logfile")" && touch "$logfile") > /dev/null 2>&1
 	if [ $? -ne 0 ]; then
 		echo "Bad log file! '$logfile' is not allowed!"
 		exit 1
